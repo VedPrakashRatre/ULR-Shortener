@@ -1,0 +1,84 @@
+# URL Shortener API
+
+A simple URL Shortener REST API built with Node.js, Express.js, MongoDB, and Mongoose.
+
+-Features
+-Create short URLs
+-Redirect short URLs to the original URL
+-Get all stored URLs
+-Generate random short URL codes
+-Store URL data in MongoDB
+-Tech Stack
+-Node.js
+-Express.js
+-MongoDB
+-Mongoose
+-API Endpoints
+
+## Create Short URL
+
+POST /api/v3/shorts
+
+# Request body:
+
+{
+  "url": "https://example.com"
+}
+
+-Redirect to Original URL
+
+GET /api/v3/shorts/:id
+
+Example:
+
+GET /api/v3/shorts/a8K2xP
+
+-Redirects to the original URL associated with that code.
+
+Get All URLs
+
+GET /api/v3/shorts/
+
+-Returns all stored URLs from the database.
+
+## Project Structure
+
+├── controller/
+│   └── controll.js
+├── db/
+│   └── connect.js
+├── getcode/
+│   └── generateurl.js
+├── model/
+│   └── model.js
+├── routes/
+│   └── route.js
+├── app.js
+├── .env
+├── .gitignore
+└── package.json
+
+## Setup
+
+-Clone the repository.
+-Install dependencies:
+-npm install
+-Create a .env file:
+-PORT=5000
+-MONGODB=your_mongodb_connection_string
+-Start the server:
+-node app.js
+
+## The server will run on:
+
+http://localhost:5000
+
+## What I Learned
+
+Building REST API routes with Express
+Using controllers and routers
+Connecting MongoDB with Mongoose
+Creating and using Mongoose schemas/models
+Using async/await with database operations
+Generating unique short URL codes
+Handling redirects with Express
